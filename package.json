@@ -1,0 +1,19 @@
+{
+  "name": "bloccit",
+  "version": "1.0.0",
+  "description": "A Reddit-like application for users to discuss and share content",
+  "main": "\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dsrc/server.js)\u001b[2~\u001b[D)\u001b[2~\u001b[D)",
+  "scripts": {
+    "test": "set NODE_ENV=test&& jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arkanis92/bloccit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arkanis92/bloccit/issues"
+  },
+  "homepage": "https://github.com/Arkanis92/bloccit#readme"
+}
