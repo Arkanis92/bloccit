@@ -11,4 +11,13 @@ describe("routes : static", () => {
       });
     });
   });
+
+  describe("GET /marco", () => {
+    it("should return polo", (done) => {
+      request.get("http://localhost:3000/marco", (err, res, body) => {
+        expect(body).toBe("polo");
+        done();
+      });
+    });
+  });
 });
