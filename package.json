@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Arkanis92/bloccit#readme",
   "devDependencies": {
+    "faker": "^4.1.0",
     "jasmine": "^3.3.1",
     "request": "^2.88.0"
   },
