@@ -9,6 +9,7 @@
     <main class = "container">
       <h1><%= topic.title %></h1>
       <a href = "/topics/<%= topic.id %>/edit" class = "btn btn-warning">Edit</a>
+      <a href = "/topics/<%= topic.id %>/posts/new" class = "btn btn-warning">New Post</a>
       <form
         style = "display:initial"
         action = "/topics/<%= topic.id %>/destroy"
@@ -18,6 +19,16 @@
       </form>
       <p>
         <%= topic.description %>
+        <hr>
+
+        <h1>Posts</h1>
+        <ul class = "list-group">
+          <% topic.posts.forEach((post) => { %>
+            <li class = "list-group-item">
+              <a href = "/topics/<%= topic.id %>/posts/<%= post.id %>"><%= post.title %></a>
+            </li>
+          <% }) %>
+        </ul>
       </p>
     </main>
     <% include ../static/partials/baseScripts.ejs %>
