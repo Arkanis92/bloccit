@@ -8,6 +8,7 @@
     <main class="container">
       <h1><%= post.title %></h1>
       <a href = "/topics/<%= post.topicId %>/posts/<%= post.id %>/edit" class = "btn btn-warning">Edit</a>
+      <a href = "/topics/<%= post.topicId %>/posts/<%= post.id %>/flairs/new" class = "btn btn-warning">New Flair</a>
       <form
         style="display:initial"
         action="/topics/<%= post.topicId %>/posts/<%= post.id %>/destroy"
@@ -15,7 +16,19 @@
       >
         <button type="submit" class="btn btn-danger">Delete</button>
       </form>
-      <p><%= post.body %></p>
+      <p>
+        <%= post.body %>
+        <hr>
+
+        <h1>Flairs</h1>
+        <ul class = "list-group">
+          <% post.flairs.forEach((flair) => { %>
+            <li class = "list-group-item">
+              <a href = "/topics/<%= post.topicId %>/posts/<%= post.id %>/flairs/<% flair.id %>" style = "background-color: <%= flair.color %>"><%= flair.name %></a>
+            </li>
+          <% }) %>
+        </ul>
+      </p>
     </main>
     <% include ../static/partials/baseScripts.ejs %>
   </body>
