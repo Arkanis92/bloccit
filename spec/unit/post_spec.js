@@ -10,14 +10,12 @@ describe("Post", () => {
     this.user;
 
     sequelize.sync({force: true}).then((res) => {
-
       User.create({
         email: "starman@tesla.com",
         password: "Trekkie4lyfe"
       })
       .then((user) => {
         this.user = user;
-
         Topic.create({
           title: "Expeditions to Alpha Centauri",
           description: "A compilation of reports from recent visits to the star system.",
