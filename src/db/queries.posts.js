@@ -23,7 +23,7 @@ module.exports = {
     })
   },
 
-  updatePost(id, updatedPost, callback) {
+  updatePost(req, updatedPost, callback) {
     return Post.findByPk(req.params.id)
     .then((post) => {
       if(!post) {

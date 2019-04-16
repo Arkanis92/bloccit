@@ -66,9 +66,9 @@ module.exports = {
   update(req, res, next) {
     postQueries.updatePost(req, req.body, (err, post) => {
       if(err || post == null) {
-        res.redirect(404, `/topic/${req.params.topicId}/posts/${req.params.id}/edit`);
+        res.redirect(404, `/topics/${req.params.topicId}/posts/${req.params.id}/edit`);
       } else {
-        res.redirect(`/topic/${req.params.topicId}/posts/${req.params.id}`);
+        res.redirect(`/topics/${req.params.topicId}/posts/${req.params.id}`);
       }
     });
   },
