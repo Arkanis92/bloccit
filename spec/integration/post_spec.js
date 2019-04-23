@@ -432,54 +432,15 @@ describe("routes : posts", () => {
   //start of owner context
   describe("owner user performing CRUD actions for Post", () => {
     beforeEach((done) => {
-      User.create({
-        email: "owner@example.com",
-        password: "1234567",
-        role: "owner"
-      })
-      .then((user) => {
-        request.get({
-          url: "http://localhost:3000/auth/fake",
-          form: {
-            role: user.role,
-            userId: user.id,
-            email: user.email
-          }
-        }, (err, res, body) => {
-          done();
-        });
-      });
-    });
-
-    describe("GET /topics/:topicId/posts/new", () => {
-      it("should not render a new post form", (done) => {
-        request.get(`${base}/${this.topic.id}/posts/new`, (err, res, body) => {
-          expect(body).toContain("Error");
-          done();
-        });
-      });
-    });
-
-    describe("POST /topics/:topicId/posts/create", () => {
-      it("should not create a new post", (done) => {
-        const options = {
-          url: `${base}/${this.topic.id}/posts/create`,
-          form: {
-            title: "Watching snow melt",
-            body: "Without a doubt my favorite thing to do besides watching paint dry!"
-          }
-        };
-        request.post(options, (err, res, body) => {
-          Post.findOne({where: {title: "Watching snow melt"}})
-          .then((post) => {
-            expect(post).toBeNull();
-            done();
-          })
-          .catch((err) => {
-            console.log(err);
-            done();
-          });
-        });
+      request.get({
+        url: "http://localhost:3000/auth/fake",
+        form: {
+          role: this.user.role,
+          userId: this.user.id,
+          email: this.user.email
+        }
+      }, (err, res, body) => {
+        done();
       });
     });
 

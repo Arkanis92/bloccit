@@ -1,6 +1,6 @@
 const Post = require("./models").Post;
 const Topic = require("./models").Topic;
-const Comment = require("./models").Comments;
+const Comment = require("./models").Comment;
 const User = require("./models").User;
 const Authorizer = require("../policies/post");
 
@@ -60,7 +60,6 @@ module.exports = {
     return Post.findByPk(req.params.id)
     .then((post) => {
       const authorized = new Authorizer(req.user, post).destroy();
-
       if(authorized) {
         post.destroy()
         .then((res) => {
