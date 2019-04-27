@@ -26,7 +26,7 @@ module.exports = {
 
     if(errors) {
       req.flash("error", errors);
-      return res.rediect(req.headers.referer);
+      return res.redirect(req.headers.referer);
     } else {
       return next();
     }
