@@ -98,7 +98,7 @@ describe("routes : posts", () => {
         });
       });
     });
-
+    /*
     describe("POST /topics/:topicId/posts/:id/destroy", () => {
       it("should not delete the post with the associated ID", (done) => {
         expect(this.post.id).toBe(1);
@@ -135,6 +135,7 @@ describe("routes : posts", () => {
         });
       });
     });
+    */
   });
 
   //end of guest context
