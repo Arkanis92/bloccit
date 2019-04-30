@@ -147,6 +147,7 @@ describe("routes : favorites", () => {
            const favorite = favorites[0];
            favCountBeforeDelete = favorites.length;
 
+           console.log(`${base}${this.topic.id}/posts/${this.post.id}/favorites/${favorite.id}/destroy`);
            request.post(`${base}${this.topic.id}/posts/${this.post.id}/favorites/${favorite.id}/destroy`,
              (err, res, body) => {
                this.post.getFavorites()
