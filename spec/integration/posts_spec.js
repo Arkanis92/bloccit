@@ -50,7 +50,8 @@ describe("routes : posts", () => {
       request.get({
         url: "http://localhost:3000/auth/fake",
         form: {
-          role: "guest"
+          role: "guest",
+          userId: 0
         }
       }, (err, res, body) => {
         done();
