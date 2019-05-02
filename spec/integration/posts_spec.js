@@ -50,7 +50,8 @@ describe("routes : posts", () => {
       request.get({
         url: "http://localhost:3000/auth/fake",
         form: {
-          role: "guest"
+          role: "guest",
+          userId: 0
         }
       }, (err, res, body) => {
         done();
@@ -98,7 +99,7 @@ describe("routes : posts", () => {
         });
       });
     });
-    /*
+
     describe("POST /topics/:topicId/posts/:id/destroy", () => {
       it("should not delete the post with the associated ID", (done) => {
         expect(this.post.id).toBe(1);
@@ -135,7 +136,6 @@ describe("routes : posts", () => {
         });
       });
     });
-    */
   });
 
   //end of guest context
