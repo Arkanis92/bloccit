@@ -16,7 +16,6 @@ module.exports = {
       req.flash("notice", "You must be signed in to do that.");
       res.redirect(req.headers.referer);
     }
-
   },
 
 // #3
@@ -25,6 +24,7 @@ module.exports = {
     if(req.user){
       favoriteQueries.deleteFavorite(req, (err, favorite) => {
         if(err){
+          console.log(err);
           req.flash("error", err);
         }
         res.redirect(req.headers.referer);
